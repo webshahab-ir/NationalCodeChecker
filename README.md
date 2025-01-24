@@ -1,41 +1,55 @@
 # National Code Checker
 
-## Overview
-This Java program verifies the validity of a national code and uses an API to process the entered number. It checks the format of the input, calculates a checksum for validation, and integrates with the [CodeBazan API](https://api.codebazan.ir/adad/?text=255) to fetch additional data related to the input.
+این برنامه یک ابزار ساده برای بررسی اعتبار کد ملی ایران است. همچنین از یک API خارجی برای پردازش عدد وارد شده استفاده می‌کند.
 
-## Features
-- Validates if the input is a numeric string.
-- Ensures the input length is exactly 10 characters.
-- Calculates a checksum to verify the national code's validity.
-- Makes an HTTP GET request to an external API for additional processing.
+## پیش‌نیازها
 
-## Prerequisites
-- Java Development Kit (JDK) installed (version 8 or higher).
-- Internet connection to access the API.
+برای اجرای این برنامه، به موارد زیر نیاز دارید:
+- [JDK](https://www.oracle.com/java/technologies/javase-downloads.html) نسخه 8 یا جدیدتر
+- دسترسی به اینترنت (برای فراخوانی API)
 
-## How to Run
-1. Clone or download this repository.
-2. Open the project in your preferred Java IDE or use the terminal.
-3. Compile the code using the following command:
-   ```
+## نحوه اجرا
+
+1. کد را در یک فایل جاوا با نام `NationalCodeChecker.java` ذخیره کنید.
+2. برنامه را با دستورات زیر کامپایل و اجرا کنید:
+   ```bash
    javac NationalCodeChecker.java
-   ```
-4. Run the program using:
-   ```
    java NationalCodeChecker
-   ```
-5. Enter a 10-digit national code when prompted.
+پس از اجرای برنامه، کد ملی خود را وارد کنید. برنامه موارد زیر را بررسی می‌کند:
+آیا کد ورودی فقط شامل اعداد است؟
+آیا طول کد ملی معتبر است؟
+آیا کد ملی از نظر الگوریتم محاسباتی معتبر است؟
+فراخوانی یک API خارجی برای پردازش عدد وارد شده و نمایش نتیجه.
+جزئیات کد
+توابع اصلی
+isNumeric(String str): بررسی می‌کند که آیا یک رشته فقط شامل اعداد است.
+callApi(String number): با استفاده از یک URL به API خارجی متصل شده و نتیجه را دریافت می‌کند.
+محاسبه اعتبار کد ملی با استفاده از فرمول استاندارد و الگوریتم بررسی کد ملی.
+API مورد استفاده
+برنامه از API زیر برای پردازش عدد وارد شده استفاده می‌کند:
 
-## Example
-### Input:
-```
-Enter Your National Code: 1234567890
-```
-### Output:
-```
-Your code is valid!
-API Response: [Response from API]
-```
-## License
-This project is licensed under the MIT License. Feel free to use and modify it as needed.
+URL: https://api.codebazan.ir/adad/?text=
+مثال خروجی
+ورودی:
 
+Copy
+Edit
+1111111111
+خروجی:
+
+less
+Copy
+Edit
+کد شما معتبر است!
+API Response: [نتیجه API]
+نکات
+مطمئن شوید که به اینترنت متصل هستید تا API به درستی کار کند.
+اگر کد وارد شده نامعتبر باشد یا خطایی رخ دهد، پیام مناسب به شما نمایش داده خواهد شد.
+مشکلات و پیشنهادات
+اگر مشکلی در اجرا دارید یا پیشنهادی برای بهبود کد دارید، لطفاً یک Issue ایجاد کنید یا با من تماس بگیرید.
+
+go
+Copy
+Edit
+
+این فایل `README.md` توضیحات جامعی ارائه می‌دهد و برای توسعه‌دهندگان و کاربران نهایی مفید خواهد بود.
