@@ -41,7 +41,7 @@ Enter Your National Code: 1234567890
 ### Output:
 
 ```
-Yه
+Your code is valid!
 ```
 
 ## Code Breakdown
